@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ilia</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+
 </head>
 
 <body>
@@ -104,9 +104,10 @@
             <div class="feedback" id="feedback-q10"></div>
         </fieldset>
 
-        <div class="submit-container">
-            <button type="button" onclick="checkAnswers()">Submit Answers</button>
-            <div id="totalScore"></div>
+        <div class="button-container">
+            <button type="button" onclick="resetQuiz()">Initialiser</button>
+            <button type="button" onclick="showResult()">Afficher le Résultat</button>
+            <button type="button" onclick="showAnswers()">Afficher les Réponses</button>
         </div>
     </form>
 
@@ -115,7 +116,7 @@
 
 
 
-
+    <script src="script.js"></script>
 
 </body>
 
