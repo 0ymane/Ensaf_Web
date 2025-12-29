@@ -1,0 +1,160 @@
+:root {
+    --color-bg-top: #240b36;   /* Deep Purple */
+    --color-bg-bot: #c31432;   /* Sunset Red */
+    --color-chassis: rgba(20, 20, 30, 0.8);
+
+    /* The Miami Palette */
+    --neon-pink: #ff00cc;
+    --neon-blue: #33ccff;
+    --neon-yellow: #ffcc00;
+    --text-white: #ffffff;
+
+    --font-retro: 'Righteous', cursive;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Synthwave Sunset Background */
+    background: linear-gradient(to bottom, var(--color-bg-top), var(--color-bg-bot));
+    font-family: var(--font-retro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-white);
+    overflow: hidden;
+}
+
+
+/* --- Main Device --- */
+.calc-chassis {
+    background: rgba(45, 10, 60, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 20px;
+    /* Double neon border effect */
+    box-shadow:
+            0 0 10px var(--neon-blue),
+            0 0 40px var(--neon-pink),
+            inset 0 0 20px rgba(255, 0, 204, 0.2);
+    border: 3px solid var(--neon-pink);
+    position: relative;
+    max-width: 360px;
+    width: 100%;
+}
+
+/* --- The Display Screen --- */
+.display-container {
+    background: #111;
+    border: 2px solid var(--neon-blue);
+    border-radius: 10px;
+    margin-bottom: 25px;
+    padding: 20px;
+    text-align: right;
+    box-shadow: inset 0 0 15px rgba(51, 204, 255, 0.3);
+    position: relative;
+}
+
+/* VHS Glitch / Scanline effect */
+.display-container::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.previous-operand {
+    color: var(--neon-blue);
+    font-size: 1.2rem;
+    min-height: 1.5rem;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.current-operand {
+    color: var(--neon-yellow);
+    font-size: 3rem;
+    text-shadow: 2px 2px 0px #ff0000; /* Retro drop shadow */
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/* --- Buttons Grid --- */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* --- Button Styles --- */
+.btn {
+    font-family: var(--font-retro);
+    font-size: 1.5rem;
+    padding: 15px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    transition: transform 0.1s, box-shadow 0.1s;
+
+    /* Default Number Buttons: White/Purple gradient */
+    background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+    color: #240b36;
+    box-shadow: 0 4px 0 #b0b0b0;
+}
+
+.btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 transparent;
+}
+
+/* Operators (Pink Gradient) */
+.btn-op {
+    background: linear-gradient(135deg, #ff00cc 0%, #aa0088 100%);
+    color: white;
+    box-shadow: 0 4px 0 #77005f;
+    text-shadow: 1px 1px 0 #000;
+}
+
+/* Clear/Delete (Blue Gradient) */
+.btn-clear, .btn-delete {
+    background: linear-gradient(135deg, #33ccff 0%, #0088aa 100%);
+    color: #000;
+    box-shadow: 0 4px 0 #005f77;
+}
+
+/* Equals Button (Yellow/Sunset) */
+.btn-equals {
+    background: linear-gradient(135deg, #ffcc00 0%, #ff6600 100%);
+    color: #240b36;
+    box-shadow: 0 4px 0 #cc5500;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+/* JS Flash Effect */
+.screen-flash {
+    animation: flashAnimation 0.15s ease-out;
+}
+
+@keyframes flashAnimation {
+    0% { background-color: var(--neon-pink); }
+    100% { background-color: #111; }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 400px) {
+    .current-operand { font-size: 2.2rem; }
+    .btn { padding: 12px; font-size: 1.2rem; }
+}

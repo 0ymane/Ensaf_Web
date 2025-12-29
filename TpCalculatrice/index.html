@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi-Tech Calculatrice </title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div class="calc-chassis">
+    <div class="display-container" id="displayScreen">
+        <div class="previous-operand" id="previousOperand"></div>
+        <div class="current-operand" id="currentOperand">0</div>
+    </div>
+    <div class="buttons-grid">
+        <button class="btn btn-clear span-two" onclick="calculator.clear()">AC</button>
+        <button class="btn btn-delete" onclick="calculator.delete()">DEL</button>
+        <button class="btn btn-op" onclick="calculator.chooseOperation('÷')">÷</button>
+
+        <button class="btn" onclick="calculator.appendNumber('7')">7</button>
+        <button class="btn" onclick="calculator.appendNumber('8')">8</button>
+        <button class="btn" onclick="calculator.appendNumber('9')">9</button>
+        <button class="btn btn-op" onclick="calculator.chooseOperation('*')">×</button>
+
+        <button class="btn" onclick="calculator.appendNumber('4')">4</button>
+        <button class="btn" onclick="calculator.appendNumber('5')">5</button>
+        <button class="btn" onclick="calculator.appendNumber('6')">6</button>
+        <button class="btn btn-op" onclick="calculator.chooseOperation('-')">-</button>
+
+        <button class="btn" onclick="calculator.appendNumber('1')">1</button>
+        <button class="btn" onclick="calculator.appendNumber('2')">2</button>
+        <button class="btn" onclick="calculator.appendNumber('3')">3</button>
+        <button class="btn btn-op" onclick="calculator.chooseOperation('+')">+</button>
+
+        <button class="btn" onclick="calculator.appendNumber('.')">.</button>
+        <button class="btn" onclick="calculator.appendNumber('0')">0</button>
+        <button class="btn btn-equals span-two" onclick="calculator.compute()">=</button>
+    </div>
+</div>
+<script src="main.js"></script>
 </body>
 </html>
