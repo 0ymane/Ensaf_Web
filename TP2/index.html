@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP N°2 - Dev Web - ENSA Fès</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <h2>TP 2 : Dev Web<br><small style="font-size:0.7em; color:#7f8c8d;">Prof: Y. IDRISSI KHAMLICHI</small></h2>
+    <button onclick="showExercise('ex1', this)" class="active">1. Carousel Images</button>
+    <button onclick="showExercise('ex2', this)">2. Menu Déroulant</button>
+    <button onclick="showExercise('ex3', this)">3. To-Do List</button>
+    <button onclick="showExercise('ex4', this)">4. Modal</button>
+    <button onclick="showExercise('ex5', this)">5. Filtrage Tableau</button>
+    <button onclick="showExercise('ex6', this)">6. Responsive</button>
+    <button onclick="showExercise('ex7', this)">7. Barre Progression</button>
+    <button onclick="showExercise('ex8', this)">8. Drag & Drop</button>
+    <button onclick="showExercise('ex9', this)">9. Thème Sombre</button>
+</nav>
+
+<main>
+
+    <div id="ex1" class="exercise-section active">
+        <h1>Exercice 1 : Carousel d'images</h1>
+        <div style="text-align: center;">
+            <img id="carouselImg" src="https://via.placeholder.com/600x300/3498db/ffffff?text=Image+1" style="max-width: 100%; border-radius: 8px; margin-bottom: 15px;">
+            <br>
+            <button onclick="moveCarousel(-1)">❮ Précédent</button>
+            <button onclick="moveCarousel(1)">Suivant ❯</button>
+        </div>
+    </div>
+
+    <div id="ex2" class="exercise-section">
+        <h1>Exercice 2 : Menu Déroulant Animé</h1>
+        <div class="dropdown">
+            <button id="menuTrigger" style="padding: 10px 20px; font-size: 16px;">Options ▼</button>
+            <div id="menuDropdown" class="menu-content">
+                <p>Profil</p>
+                <p>Paramètres</p>
+                <p>Déconnexion</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="ex3" class="exercise-section">
+        <h1>Exercice 3 : To-Do List Interactive</h1>
+        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <input type="text" id="todoInput" placeholder="Ajouter une tâche..." style="padding: 8px; flex-grow: 1;">
+            <button onclick="addTodo()">Ajouter</button>
+        </div>
+        <ul id="todoList" style="list-style: none; padding: 0;"></ul>
+    </div>
+
+    <div id="ex4" class="exercise-section">
+        <h1>Exercice 4 : Modal de Notification</h1>
+        <button onclick="toggleModal(true)" style="padding: 10px 20px; background: #e67e22; color: white; border: none; border-radius: 4px; cursor: pointer;">Ouvrir la modale</button>
+
+        <div id="myModal" class="modal-overlay">
+            <div class="modal-box">
+                <h3>Attention !</h3>
+                <p>Ceci est une notification importante.</p>
+                <button onclick="toggleModal(false)">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="ex5" class="exercise-section">
+        <h1>Exercice 5 : Filtrage de Tableau</h1>
+        <input type="text" id="filterInput" placeholder="Rechercher un fruit..." onkeyup="filterList()" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+        <ul id="filterList" style="border: 1px solid #ddd; padding: 10px;">
+            <li>Pomme</li>
+            <li>Banane</li>
+            <li>Orange</li>
+            <li>Fraise</li>
+            <li>Kiwi</li>
+            <li>Ananas</li>
+        </ul>
+    </div>
+
+    <div id="ex6" class="exercise-section">
+        <h1>Exercice 6 : Responsive JS</h1>
+        <p>Redimensionnez la fenêtre de votre navigateur pour tester.</p>
+        <div id="layoutDisplay" style="padding: 20px; text-align: center; color: white; font-weight: bold; border-radius: 8px;">
+            Chargement...
+        </div>
+    </div>
+
+    <div id="ex7" class="exercise-section">
+        <h1>Exercice 7 : Barre de Progression</h1>
+        <div style="width: 100%; background: #ddd; height: 30px; border-radius: 15px; overflow: hidden; margin-bottom: 20px;">
+            <div id="progressBar" style="width: 0%; height: 100%; background: #2ecc71; transition: width 0.1s;"></div>
+        </div>
+        <button onclick="startDownload()">Lancer le téléchargement</button>
+    </div>
+
+    <div id="ex8" class="exercise-section">
+        <h1>Exercice 8 : Drag and Drop</h1>
+        <p>Glissez les éléments bleus vers la zone de droite.</p>
+
+        <div class="dd-box" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div id="drag1" class="dd-item" draggable="true" ondragstart="drag(event)">Item A</div>
+            <div id="drag2" class="dd-item" draggable="true" ondragstart="drag(event)">Item B</div>
+        </div>
+
+        <div class="dd-box" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left: 20px;"></div>
+    </div>
+
+    <div id="ex9" class="exercise-section">
+        <h1>Exercice 9 : Thème Clair / Sombre</h1>
+        <p>Cliquez pour changer le thème de tout le dashboard. La préférence est sauvegardée.</p>
+        <button onclick="toggleTheme()" style="padding: 10px 20px; cursor: pointer;">Basculer le thème</button>
+    </div>
+
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>
