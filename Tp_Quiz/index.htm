@@ -1,17 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Quiz & QCM</title>
-    <link rel="stylesheet" href="style.css">
-
+    <title>TP Frontend HTML/JS</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
+<h1>TP 1 : Frontend HTML/JavaScript</h1>
 
-    <h1>JavaScript Interview Quiz</h1>
+<!-- Exercice 1.1 -->
+<div class="exercice">
+    <h2>1. Afficher/Masquer le texte</h2>
+    <button id="toggleBtn">Masquer</button>
+    <p id="textToToggle">Ceci est un paragraphe de texte qui peut être affiché ou masqué en cliquant sur le bouton.</p>
+</div>
+
+<!-- Exercice 1.2 -->
+<div class="exercice">
+    <h2>2. Changer de style au clic</h2>
+    <button id="changeColorBtn">Changer la couleur</button>
+    <div class="div-changeable" id="colorDiv">Cliquez sur le bouton!</div>
+</div>
+
+<!-- Exercice 1.3 -->
+<div class="exercice">
+    <h2>3. Événements de souris</h2>
+    <div class="div-hover" id="hoverDiv">Passez la souris ici!</div>
+</div>
+
+<!-- Exercice 1.4 -->
+<div class="exercice">
+    <h2>4. Formulaire de validation</h2>
+    <form id="myForm">
+        <input type="text" id="nom" placeholder="Nom">
+        <input type="email" id="email" placeholder="Email">
+        <button type="submit">Soumettre</button>
+        <div id="errorMsg" class="error"></div>
+    </form>
+</div>
+
+<!-- Exercice 1.5 -->
+<div class="exercice">
+    <h2>5. Timer en temps réel</h2>
+    <div class="timer" id="timer">00:00:00</div>
+</div>
+
+<!-- Exercice 2 -->
+<div class="exercice">
+    <h2>Exercice 2 : Manipulation des tableaux</h2>
+    <button id="testArrayBtn">Tester les fonctions</button>
+    <div id="arrayResults" class="result"></div>
+</div>
+
+<!-- Quiz JavaScript -->
+<div class="exercice">
+    <h2>JavaScript Interview Quiz</h2>
     <form id="quizForm">
         <fieldset>
             <legend>1. Which keyword declares a variable that CANNOT be reassigned?</legend>
@@ -50,8 +94,7 @@
         </fieldset>
 
         <fieldset>
-            <legend>5. Given <code>let person = { name: "Ali", age: 30 };</code>, how do you get the value "Ali"?
-            </legend>
+            <legend>5. Given <code>let person = { name: "Ali", age: 30 };</code>, how do you get the value "Ali"?</legend>
             <label><input type="radio" name="q5" value="a"> <code>person("name")</code></label>
             <label><input type="radio" name="q5" value="b"> <code>person[0]</code></label>
             <label><input type="radio" name="q5" value="c"> <code>person.name</code></label>
@@ -73,7 +116,7 @@
             <label><input type="radio" name="q7" value="a"> <code>str.length</code></label>
             <label><input type="radio" name="q7" value="b"> <code>str.size()</code></label>
             <label><input type="radio" name="q7" value="c"> <code>length(str)</code></label>
-            <label><input type="radio" name="q7" value="d"> Example <code>str.count</code></label>
+            <label><input type="radio" name="q7" value="d"> <code>str.count</code></label>
             <div class="feedback" id="feedback-q7"></div>
         </fieldset>
 
@@ -112,12 +155,8 @@
     </form>
 
     <div id="result"></div>
+</div>
 
-
-
-
-    <script src="script.js"></script>
-
+<script src="./script.js"></script>
 </body>
-
 </html>
